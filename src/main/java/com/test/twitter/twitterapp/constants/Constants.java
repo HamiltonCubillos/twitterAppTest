@@ -1,0 +1,12 @@
+package com.test.twitter.twitterapp.constants;
+
+public class Constants {
+    private Constants(){}
+    public final static int ONE_INT = 1;
+    public final static String ISO_LANGUAGE_SPANISH = "ES";
+    public final static String IS_LANGUAGE_FRENCH =  "FR";
+    public final static String IS_LANGUAGE_ITALIAN = "IT";
+    public final static int FIFTEENHUNDRED = 1500;
+    public final static int ZERO_INT = 0;
+    public final static int ONE_HUNDRED = 100;//GET TWEETS LIMIT HOUR
+}
