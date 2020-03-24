@@ -1,2 +1,2 @@
 # twitterAppTest
-Acciona test. Make a microservice that retrieve tweets
+Acciona test. Implmentation of microservice that retrieve tweet
