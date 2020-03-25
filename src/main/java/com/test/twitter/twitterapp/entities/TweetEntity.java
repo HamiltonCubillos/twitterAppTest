@@ -1,23 +1,25 @@
 package com.test.twitter.twitterapp.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "T_TWEETS")
 @Entity
+@Data
+@NoArgsConstructor
 public class TweetEntity {
     @Id
     @GeneratedValue
     private long id;
-    private String user;
+    @Column(name="user_name",nullable = false)
+    private String userName;
+    @Lob
+    @Column(name="text",length = 100000)
     private String text;
+    @Column(name="location")
     private String location;
-    private Boolean hasBeenValidate;
+    @Column(name="has_been_validate")
+    private Boolean hasBeenValidate = false;
 }

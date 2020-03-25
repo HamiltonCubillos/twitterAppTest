@@ -9,4 +9,5 @@ public class Constants {
     public final static int FIFTEENHUNDRED = 1500;
     public final static int ZERO_INT = 0;
     public final static int ONE_HUNDRED = 100;//GET TWEETS LIMIT HOUR
+    public final static String EMPTY_STRING = "";
 }
