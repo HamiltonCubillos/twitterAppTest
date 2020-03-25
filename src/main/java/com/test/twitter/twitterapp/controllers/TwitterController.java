@@ -1,6 +1,7 @@
 package com.test.twitter.twitterapp.controllers;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.test.twitter.twitterapp.entities.TweetEntity;
 import com.test.twitter.twitterapp.response.StandardResponse;
@@ -35,7 +36,8 @@ public class TwitterController {
         LOGGER.debug("Se ha detectado una petición para obtener tweets");
         final List<TweetEntity> recoveredTweets = twitterService.getTweetsBySubject(subjectOfTweets);
         final Type listOfTestObject = new TypeToken<List<TweetEntity>>() {}.getType();
+        final Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return ResponseEntity.status(200).body(
-                new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, new Gson().toJson(recoveredTweets, listOfTestObject))));
+                gson.toJson(new StandardResponse(StatusResponse.SUCCESS, gson.toJsonTree(recoveredTweets, listOfTestObject))));
     }
 }

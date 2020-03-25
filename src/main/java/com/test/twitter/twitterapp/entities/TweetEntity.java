@@ -19,7 +19,7 @@ public class TweetEntity {
     @Column(name="text",length = 100000)
     private String text;
     @Column(name="location")
-    private String location;
+    private String location = "N/A";
     @Column(name="has_been_validate")
     private Boolean hasBeenValidate = false;
 }
